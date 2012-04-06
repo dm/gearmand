@@ -50,3 +50,5 @@
 #include <libgearman-server/plugins/queue/redis/queue.h>
 
 #include <libgearman-server/plugins/queue/mysql/queue.h>
+
+#include <libgearman-server/plugins/queue/mongodb/queue.h>

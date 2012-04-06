@@ -92,6 +92,17 @@ AX_LIB_CURL([7.21.7],
 m4_include([m4/drizzled.m4])
 WITH_LIBDRIZZLE
 
+AX_LIB_MONGOCLIENT
+AS_IF([test "x${WANT_MONGOCLIENT}" = "xyes"],
+      [
+       AC_DEFINE([HAVE_LIBMONGOCLIENT], [ 1 ], [Have the MONGOCLIENT library])
+      ],
+      [
+       AC_DEFINE([HAVE_LIBMONGOCLIENT], [ 0 ], [Have the MONGOCLIENT library])
+      ])
+AM_CONDITIONAL(HAVE_LIBMONGOCLIENT, test "x${WANT_MONGOCLIENT}" = "xyes")
+
+
 AX_LIB_SQLITE3
 AS_IF([test "x${WANT_SQLITE3}" = "xyes"],
       [
@@ -261,6 +272,7 @@ echo "   * Debug enabled:             $with_debug"
 echo "   * Warnings as failure:       $ac_cv_warnings_as_errors"
 echo "   * Building with libsqlite3   $WANT_SQLITE3"
 echo "   * Building with libdrizzle   $ac_enable_libdrizzle"
+echo "   * Building with mongodb      $WANT_MONGOCLIENT"
 echo "   * Building with libmemcached $ac_enable_libmemcached"
 echo "   * Building with libpq        $ac_cv_libpq"
 echo "   * Building with tokyocabinet $ac_enable_libtokyocabinet"
