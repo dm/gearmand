@@ -232,8 +232,6 @@ static gearmand_error_t _mongodb_replay(gearman_server_st *server, void *context
     void *correct_data = malloc(data_size);
     memcpy(correct_data, data, data_size + 1);
 
-    cout << "data_size: " << data_size << " data: [" << (char*) correct_data << "]" << endl;
-
     gearmand_error_t gret = (*add_fn)(
       server,
       add_context,
