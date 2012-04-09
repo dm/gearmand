@@ -69,7 +69,6 @@ private:
 Mongodb::Mongodb() :
   Queue("mongodb")
 {
-  std::cout << "Mongodb::Mongodb" << std::endl;
   command_line_options().add_options()
     ("mongodb-server", boost::program_options::value(&server), "Location of the mongodb server (=localhost)");
 }
@@ -80,13 +79,11 @@ Mongodb::~Mongodb()
 
 gearmand_error_t Mongodb::initialize()
 {
-  std::cout << "Mongodb::initialize" << std::endl;
   return _initialize(this, &Gearmand()->server);
 }
 
 void initialize_mongodb()
 {
-  std::cout << "initialize_mongodb" << std::endl;
   static Mongodb local_instance;
 }
 
@@ -125,13 +122,10 @@ static gearmand_error_t _mongodb_replay(gearman_server_st *server,
 gearmand_error_t _initialize(plugins::queue::Mongodb *queue,
                              gearman_server_st *server)
 {
-  std::cout << "_initialize" << std::endl;
   gearmand_info("Initializing mongodb module");
   try {
-    std::cout << "connect()" << queue->server.c_str() << std::endl;
     queue->dbclient.connect(queue->server.c_str());
   } catch (mongo::DBException &e) {
-    std::cout << "caught " << e.what() << std::endl;
     gearmand_log_error(GEARMAN_DEFAULT_LOG_PARAM, "unable to connect to mongodb server %s", queue->server.c_str());
 
     return GEARMAN_QUEUE_ERROR;
