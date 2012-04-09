@@ -1,0 +1,29 @@
+# vim:ft=automake
+# Gearman server and library
+# Copyright (C) 2011 Data Differential, http://datadifferential.com/
+# All rights reserved.
+#
+# Use and distribution licensed under the BSD license.  See
+# the COPYING file in the parent directory for full text.
+#
+# Included from Top Level Makefile.am
+# All paths should be given relative to the root
+#
+
+tests_mongodb_test_SOURCES=
+tests_mongodb_test_DEPENDENCIES=
+tests_mongodb_test_LDADD=
+
+tests_mongodb_test_DEPENDENCIES+= $(CLIENT_LDADD)
+tests_mongodb_test_DEPENDENCIES+= gearmand/gearmand
+tests_mongodb_test_LDADD+= $(CLIENT_LDADD)
+tests_mongodb_test_SOURCES+= tests/mongodb_test.cc
+tests_mongodb_test_SOURCES+= tests/basic.cc
+check_PROGRAMS+= tests/mongodb_test
+noinst_PROGRAMS+= tests/mongodb_test
+
+test-mongodb: tests/mongodb_test
+	@tests/mongodb_test
+
+valgrind-mongodb: tests/mongodb_test
+	@$(VALGRIND_COMMAND) tests/mongodb_test

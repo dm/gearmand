@@ -93,7 +93,7 @@ AC_DEFUN([AX_LIB_MONGOCLIENT],
             AC_SUBST(MONGOCLIENT_CFLAGS)
             AC_SUBST(MONGOCLIENT_LDFLAGS)
             AC_SUBST(MONGOCLIENT_VERSION)
-            AC_DEFINE([HAVE_MONGOCLIENT], [], [Have the MONGOCLIENT library])
+            AC_DEFINE([HAVE_MONGOCLIENT], [1], [Have the MONGOCLIENT library])
         fi
     fi
 ])

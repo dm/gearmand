@@ -157,17 +157,13 @@ static gearmand_error_t _mongodb_add(gearman_server_st *server,
 
   gearmand::plugins::queue::Mongodb *queue= (gearmand::plugins::queue::Mongodb *)context;
 
-  // Copy the data to the correct size
-  void *data_storage = malloc(data_size);
-  memcpy(data_storage, data, data_size);
-
   BSONObjBuilder b;
   b.append("function_name", function_name);
   b.appendNumber("function_name_size", (int)function_name_size);
   b.append("priority", priority);
   b.append("unique", unique);
   b.appendNumber("unique_size", (int)unique_size);
-  b.appendBinData("data", data_size, BinDataGeneral, (const char *)data_storage);
+  b.appendBinData("data", data_size, BinDataGeneral, data);
   b.appendNumber("data_size", (int)data_size);
   b.appendNumber("when", (int)when);
   BSONObj job = b.obj();
@@ -180,7 +176,6 @@ static gearmand_error_t _mongodb_add(gearman_server_st *server,
       ret = GEARMAN_QUEUE_ERROR;
   }
 
-  free(data_storage);
   return ret;
 }
 
@@ -222,9 +217,8 @@ static gearmand_error_t _mongodb_replay(gearman_server_st *server, void *context
     BSONObj job = cursor->next();
 
     int data_size;
-    char *data = (char *)job.getField("data").binData(data_size);
-    void *correct_data = malloc(data_size);
-    memcpy(correct_data, data, data_size + 1);
+    void *data = malloc(data_size);
+    memcpy(data, job.getField("data").binData(data_size), data_size);
 
     gearmand_error_t gret = (*add_fn)(
       server,
@@ -233,8 +227,8 @@ static gearmand_error_t _mongodb_replay(gearman_server_st *server, void *context
       job.getIntField("unique_size"),
       job.getStringField("function_name"),
       job.getIntField("function_name_size"),
-      (void *)correct_data,
-      data_size,
+      (void *)data,
+      job.getIntField("dat_size"),
       static_cast<gearmand_job_priority_t>(job.getIntField("priority"), 0),
       job.getIntField("when")
     );
@@ -243,7 +237,6 @@ static gearmand_error_t _mongodb_replay(gearman_server_st *server, void *context
     {
       return gret;
     }
-    cout << "added" << endl;
   }
 
   gearmand_info("mongodb replay finished successfully");
