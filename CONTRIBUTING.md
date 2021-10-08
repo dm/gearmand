@@ -12,13 +12,13 @@ If you are building from source control (i.e. git), you should setup your enviro
 
 This will build the files you will need in order to run `./configure`
 
-If you are working on the server, here are some handy environmental variables you can set so that you can debug make test:
+If you are working on the server, here are some handy environmental variables you can set so that you can debug `make test`:
 
  * GEARMAN_VALGRIND <-- runs the server under valgrind.
  * GEARMAN_MANUAL_GDB <-- runs the server under a remote version of GDB.
- * GEARMAN_LOG <-- generates a log file for you with the output of the debug for the server
+ * GEARMAN_LOG <-- generates a log file for you with the output of the debug for the server.
 
-GDB will pause the server while you do run the GDB command.
+Note that GDB will pause the server while you run the GDB command.
 
 Coding Style
 ------------
@@ -27,7 +27,7 @@ Coding Style
 
 2. When in doubt, use `()`. It means I clearly know that you meant for an operation to follow a specific order.
 
-3. Cast return types void when there is a possibility of failure (don't bother with printf, use common sense):  (void)some_function(...);
+3. Cast return types void when there is a possibility of failure (don't bother with `printf`, use common sense):  `(void)some_function(...);`
 
 4. New functions should be named `object_verb_(item_to_act_on)`. You should email the list if you are extending the API.
 
@@ -52,5 +52,5 @@ Coding Style
     ```
 
 
-Happy Hacking :octocat:\
+Happy hacking :octocat:,\
   -Brian
