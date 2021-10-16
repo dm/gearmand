@@ -255,11 +255,11 @@ set_VENDOR_RELEASE ()
       ;;
     ubuntu)
       VENDOR_RELEASE="$release"
-      if [[ "x$VENDOR_RELEASE" == 'x12.04' ]]; then
+      if [[ "z$VENDOR_RELEASE" == 'z12.04' ]]; then
         VENDOR_RELEASE="precise"
-      elif [[ "x$VENDOR_RELEASE" == 'x12.10' ]]; then
+      elif [[ "z$VENDOR_RELEASE" == 'z12.10' ]]; then
         VENDOR_RELEASE="quantal"
-      elif [[ "x$VENDOR_RELEASE" == 'x13.04' ]]; then
+      elif [[ "z$VENDOR_RELEASE" == 'z13.04' ]]; then
         VENDOR_RELEASE="raring"
       fi
       ;;
