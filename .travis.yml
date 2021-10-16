@@ -5,7 +5,7 @@ dist: xenial
 
 jobs:
   include:
-    - compiler: clang
+    - compiler: clang-4.0
       addons:
         apt:
           sources:
@@ -15,7 +15,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=clang-4.0 && CXX=clang++-4.0"
-    - compiler: clang
+    - compiler: clang-5.0
       addons:
         apt:
           sources:
@@ -25,7 +25,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
-    - compiler: clang
+    - compiler: clang-6.0
       addons:
         apt:
           sources:
@@ -35,7 +35,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
-    - compiler: clang
+    - compiler: clang-7
       addons:
         apt:
           sources:
@@ -45,7 +45,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=clang-7 && CXX=clang++-7"
-    - compiler: clang
+    - compiler: clang-8
       addons:
         apt:
           sources:
@@ -67,7 +67,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=clang-9 && CXX=clang++-9"
-    - compiler: gcc
+    - compiler: gcc-4.8
       dist: trusty
       addons:
         apt:
@@ -79,7 +79,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=gcc-4.8 && CXX=g++-4.8"
-    - compiler: gcc
+    - compiler: gcc-4.9
       dist: trusty
       addons:
         apt:
@@ -91,7 +91,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
-    - compiler: gcc
+    - compiler: gcc-5
       addons:
         apt:
           sources:
@@ -102,7 +102,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
-    - compiler: gcc
+    - compiler: gcc-6
       addons:
         apt:
           sources:
@@ -113,7 +113,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
-    - compiler: gcc
+    - compiler: gcc-7
       addons:
         apt:
           sources:
@@ -124,7 +124,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
-    - compiler: gcc
+    - compiler: gcc-8
       addons:
         apt:
           sources:
@@ -135,7 +135,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
-    - compiler: gcc
+    - compiler: gcc-9
       dist: bionic
       addons:
         apt:
@@ -158,7 +158,6 @@ before_script:
   - export -f travis_fold
 
 script:
-  - eval "${MATRIX_EVAL}"
   - ${CC} --version
   - ./bootstrap.sh -a
   - ./configure --enable-ssl
