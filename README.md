@@ -1,7 +1,7 @@
 gearmand
 ========
 
-[![Build Status](https://travis-ci.org/gearman/gearmand.png)](https://travis-ci.org/gearman/gearmand)
+[![Build Status](https://app.travis-ci.com/gearman/gearmand.svg?branch=master)](https://app.travis-ci.com/github/gearman/gearmand)
 
 The latest version of ```gearmand``` source code and versions 1.1.13 and later can be found at [GitHub Repository](https://github.com/gearman/gearmand). Older versions released before 1.1.13 can be found at [Launchpad Repository](http://launchpad.net/gearmand/).
 
