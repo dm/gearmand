@@ -55,7 +55,7 @@ jobs:
         artifacts: true
       env:
         - MATRIX_EVAL="CC=clang-8 && CXX=clang++-8"
-    - compiler: clang
+    - compiler: clang-9
       addons:
         apt:
           sources:
@@ -158,6 +158,7 @@ before_script:
   - export -f travis_fold
 
 script:
+  - eval "${MATRIX_EVAL}"
   - ${CC} --version
   - ./bootstrap.sh -a
   - ./configure --enable-ssl
