@@ -117,6 +117,6 @@ Or to generate an RPM distribution use:
 
 Thanks and keep hacking!
 
-Cheers,
-  -Brian
+Cheers,  
+  -Brian  
   Seattle, WA.
