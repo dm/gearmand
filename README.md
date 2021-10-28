@@ -13,15 +13,15 @@ What Is Gearman?
 
 Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work. It allows you to do work in parallel, to load balance processing, and to call functions between languages. Gearman is the nervous system for how distributed processing communicates.
 
-If you downloaded this package as a ```tar.gz``` distribution you'll want to read ***Getting Started*** section below or visit the more detailed web page [Getting Started](http://gearman.org/getting-started/)
+If you downloaded this package as a ```tar.gz``` distribution, you'll want to read ***Getting Started*** section below or visit the more detailed web page [Getting Started](http://gearman.org/getting-started/)
 
-If you are interested in developing or submitting patches to the project, read the ***Contributing*** section below and check out the [HACKING](https://github.com/gearman/gearmand/blob/master/HACKING) file for ***Coding Style*** and [COPYING](https://github.com/gearman/gearmand/blob/master/COPYING) for details on ***licensing***.
+If you are interested in developing or submitting patches to the project, read the ***Contributing*** section below and check out the [CONTRIBUTING.md](https://github.com/gearman/gearmand/blob/master/CONTRIBUTING.md) file for ***Coding Style*** and [COPYING](https://github.com/gearman/gearmand/blob/master/COPYING) for details on ***licensing***.
 
 
 Getting Started
 ---------------
 
-If you want to work on the latest code, please read the file [HACKING](https://github.com/gearman/gearmand/blob/master/HACKING).
+If you want to work on the latest code, please read the file [CONTRIBUTING.md](https://github.com/gearman/gearmand/blob/master/CONTRIBUTING.md).
 
 To build a release version from a tarball (```.tar.gz``` or ```.tgz```), you can follow the normal:
 
@@ -29,7 +29,7 @@ Change into the directory where you saved the tarball and run:
 
     tar xzf gearmand-X.Y.tar.gz
     cd gearmand-X.Y
-    
+
 Then run the usual autoconfigure style build (you may need to use ```sudo``` to install):
 
     ./configure
@@ -63,7 +63,7 @@ If all goes well, the reverse_worker application should have output:
 While the reverse_client returned:
 
     Result=!namraeG ,olleH
-    
+
 There are a lot more details about gearmand at [Getting Started](http://gearman.org/getting-started/).
 
 If you want to start writing your own client and workers, be sure to check out the [Developer API](http://gearman.info/libgearman.html) documentation.
@@ -86,7 +86,7 @@ Please follow these instructions to clone, create a branch, and generate a pull 
 
         git clone https://github.com/gearman/gearmand
 
-   If you do not have access to create branches in the gearmand GitHub repository, you will probably want to fork the repository and clone your fork instead. Refer to [Contributing to Open Source on GitHub](https://guides.github.com/activities/contributing-to-open-source/#contributing) for details.
+   If you do not have access to create branches in the gearmand GitHub repository, you should fork the repository and clone your fork instead. Refer to [Contributing to Open Source on GitHub](https://guides.github.com/activities/contributing-to-open-source/#contributing) for details.
 
 2. Next, think of a clear, descriptive branch name and then create a new branch and change to it:
 
@@ -110,13 +110,13 @@ Once you have made your changes there are two additional ```make``` targets to b
 To generate a tarball distribution of your code:
 
     make dist
-    
+
 Or to generate an RPM distribution use:
 
     make rpm
-    
+
 Thanks and keep hacking!
 
-Cheers,  
-  -Brian  
+Cheers,
+  -Brian
   Seattle, WA.
