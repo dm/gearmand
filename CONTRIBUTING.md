@@ -31,7 +31,7 @@ Coding Style
 
 4. New functions should be named `object_verb_(item_to_act_on)`. You should email the list if you are extending the API.
 
-5. Use spaces after while, for, do, if, else. Don't around anything else.
+5. Use spaces after `while`, `for`, `do`, `if`, `else`. Don't around anything else.
 
 6. If/else bracket style is:
    ```
@@ -50,7 +50,6 @@ Coding Style
     typedef enum gearman_return { ... } gearman_return_t;
     typedef gearman_return_t (gearman_complete_fn)(gearman_task_st *task);
     ```
-
 
 Happy hacking :octocat:,\
   -Brian
