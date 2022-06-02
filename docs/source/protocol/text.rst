@@ -49,3 +49,8 @@ The following list represents the current list of commands supported. You can is
 .. describe:: version
    
    Version number of server.
+
+.. describe:: prioritystatus
+
+   Queued jobs status by priority.
+
