@@ -36,6 +36,10 @@ Then run the usual autoconfigure style build (you may need to use ```sudo``` to 
     make
     make install
 
+There are various dependencies that may be satisfied on Ubuntu by installing these packages as follows:
+
+    sudo apt install libboost1.71-all-dev gperf uuid-dev python3-sphinx
+
 You can also run ```make test``` before installing to make sure everything
 checks out ok. You can also streamline the process of building and testing by running:
 
