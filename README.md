@@ -36,9 +36,11 @@ Then run the usual autoconfigure style build (you may need to use ```sudo``` to 
     make
     make install
 
-There are various dependencies that may be satisfied on Ubuntu by installing these packages as follows:
+There are various dependencies that may be satisfied on Ubuntu 20.04 by installing these packages:
 
-    sudo apt install libboost1.71-all-dev gperf uuid-dev python3-sphinx
+    sudo apt install automake autoconf libtool make curl gcc g++ git gperf     \ 
+        libssl-dev libboost-all-dev libevent-dev libhiredis-dev libpq-dev      \ 
+        libtokyocabinet-dev tcsh python3-sphinx uuid-dev wget
 
 You can also run ```make test``` before installing to make sure everything
 checks out ok. You can also streamline the process of building and testing by running:
