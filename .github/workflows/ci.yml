@@ -19,10 +19,10 @@ jobs:
         config:
           - {name: 'ubuntu-14.04 gcc-4.8', os: ubuntu-latest, container: 'ubuntu:14.04', cc: 'gcc-4.8', cxx: 'g++-4.8', tag: '4.8', toolchain: 'ppa:ubuntu-toolchain-r/test'}
           - {name: 'ubuntu-14.04 gcc-4.9', os: ubuntu-latest, container: 'ubuntu:14.04', cc: 'gcc-4.9', cxx: 'g++-4.9', tag: '4.9', toolchain: 'ppa:ubuntu-toolchain-r/test'}
-          - {name: 'ubuntu-18.04 gcc-5', os: ubuntu-18.04, cc: 'gcc-5', cxx: 'g++-5', tag: '5'}
-          - {name: 'ubuntu-18.04 gcc-6', os: ubuntu-18.04, cc: 'gcc-6', cxx: 'g++-6', tag: '6'}
-          - {name: 'ubuntu-18.04 gcc-7', os: ubuntu-18.04, cc: 'gcc-7', cxx: 'g++-7', tag: '7'}
-          - {name: 'ubuntu-18.04 gcc-8', os: ubuntu-18.04, cc: 'gcc-8', cxx: 'g++-8', tag: '8'}
+          - {name: 'ubuntu-18.04 gcc-5', os: ubuntu-latest, container: 'ubuntu:18.04', cc: 'gcc-5', cxx: 'g++-5', tag: '5'}
+          - {name: 'ubuntu-18.04 gcc-6', os: ubuntu-latest, container: 'ubuntu:18.04', cc: 'gcc-6', cxx: 'g++-6', tag: '6'}
+          - {name: 'ubuntu-18.04 gcc-7', os: ubuntu-latest, container: 'ubuntu:18.04', cc: 'gcc-7', cxx: 'g++-7', tag: '7'}
+          - {name: 'ubuntu-18.04 gcc-8', os: ubuntu-latest, container: 'ubuntu:18.04', cc: 'gcc-8', cxx: 'g++-8', tag: '8'}
           - {name: 'ubuntu-20.04 gcc-9', os: ubuntu-20.04, cc: 'gcc-9', cxx: 'g++-9', tag: '9'}
           - {name: 'ubuntu-20.04 gcc-10', os: ubuntu-20.04, cc: 'gcc-10', cxx: 'g++-10', tag: '10'}
           - {name: 'ubuntu-22.04 gcc-11', os: ubuntu-20.04, cc: 'gcc-11', cxx: 'g++-11', tag: '11'}
