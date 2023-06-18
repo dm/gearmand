@@ -116,6 +116,7 @@ jobs:
               echo "CXXFLAGS: $CXXFLAGS"
            fi
            ./configure --enable-ssl
+      shell: bash
     - name: make
       run: |
            if [[ "${CC}" == gcc* ]] && [ "${CCVERSION}" -ge 9 ]; then
@@ -124,6 +125,7 @@ jobs:
               echo "CXXFLAGS: $CXXFLAGS"
            fi
            ${CC} --version && make
+      shell: bash
     - name: make test
       run: ${CC} --version && make test
     - name: check test-suite.log
