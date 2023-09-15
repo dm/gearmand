@@ -125,7 +125,7 @@ AC_CHECK_PROGS([RPMDEV_SETUPTREE],[rpmdev-setuptree])
 AC_CHECK_PROGS([RPM],[rpm])
 AC_PATH_PROG([GPERF],['gperf'],[])
 AS_IF([test -z "$GPERF"],
-      [AC_MSG_ERROR([could not find gperf])]])
+      [AC_MSG_ERROR([Unable to find gperf])])
 AC_PROG_AWK
 AC_PROG_INSTALL
 AC_PROG_LN_S
