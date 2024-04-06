@@ -3,7 +3,7 @@ gearmand
 
 [![Build Status](https://app.travis-ci.com/gearman/gearmand.svg?branch=master)](https://app.travis-ci.com/github/gearman/gearmand)
 
-The latest version of ```gearmand``` source code and versions 1.1.13 and later can be found at [GitHub Repository](https://github.com/gearman/gearmand). Older versions released before 1.1.13 can be found at [Launchpad Repository](http://launchpad.net/gearmand/).
+The latest version of ```gearmand``` source code and versions 1.1.13 and later can be found at [GitHub Repository](https://github.com/gearman/gearmand). Older versions released before 1.1.13 can be found at [Launchpad Repository](https://launchpad.net/gearmand/).
 
 You can grab the latest release distribution of Gearman from https://github.com/gearman/gearmand/releases. Unless otherwise specified, releases are GPG-signed by Clint Byrum, whose public key can be found at https://fewbar.com/clint-byrum-public-key/.
 
@@ -13,7 +13,7 @@ What Is Gearman?
 
 Gearman provides a generic application framework to farm out work to other machines or processes that are better suited to do the work. It allows you to do work in parallel, to load balance processing, and to call functions between languages. Gearman is the nervous system for how distributed processing communicates.
 
-If you downloaded this package as a ```tar.gz``` distribution, you'll want to read ***Getting Started*** section below or visit the more detailed web page [Getting Started](http://gearman.org/getting-started/)
+If you downloaded this package as a ```tar.gz``` distribution, you'll want to read the ***Getting Started*** section below or visit the more detailed web page [Getting Started](https://gearman.org/getting-started/).
 
 If you are interested in developing or submitting patches to the project, read the ***Contributing*** section below and check out the [CONTRIBUTING.md](https://github.com/gearman/gearmand/blob/master/CONTRIBUTING.md) file for ***Coding Style*** and [COPYING](https://github.com/gearman/gearmand/blob/master/COPYING) for details on ***licensing***.
 
@@ -70,11 +70,13 @@ While the reverse_client returned:
 
     Result=!namraeG ,olleH
 
-There are a lot more details about gearmand at [Getting Started](http://gearman.org/getting-started/).
+There are a lot more details about gearmand at [Getting Started](https://gearman.org/getting-started/).
 
-If you want to start writing your own client and workers, be sure to check out the [Developer API](http://gearman.info/libgearman.html) documentation.
+If you want to start writing your own client and workers, be sure to check out the [Developer API](https://gearman.org/gearmand/libgearman/) documentation.
 
-There are also many other [Useful Resources](http://www.gearman.org/) to help you put gearmand to work for you!
+For using and configuring the gearmand server, please check out the [latest documentation](https://gearman.org/gearmand/).
+
+There are also many other [useful resources](https://gearman.org/) to help you put gearmand to work for you!
 
 Enjoy!
 

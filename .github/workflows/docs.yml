@@ -14,14 +14,17 @@ permissions:
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between any
+# in-progress and latest queued runs. However, do not cancel in-progress runs
+# as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
 
     name: Build Docs
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-20.04
 
@@ -66,7 +69,7 @@ jobs:
       run: make -C docs dirhtml
 
     - name: Setup Pages
-      uses: actions/configure-pages@v3
+      uses: actions/configure-pages@v5
 
     - name: Upload Artifacts
       uses: actions/upload-pages-artifact@v3
@@ -74,16 +77,17 @@ jobs:
         path: 'docs/build/dirhtml'
 
   deploy:
+
+    name: Deploy Docs
+
     # Add a dependency on the build job
     needs: build
 
-    name: Deploy Docs
+    runs-on: ubuntu-latest
 
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
 
     steps:
     - name: Deploy to GitHub Pages
