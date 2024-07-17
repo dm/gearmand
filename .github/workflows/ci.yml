@@ -34,6 +34,7 @@ jobs:
       CCVERSION: ${{ matrix.config.tag }}
       GHA_CONTAINER: ${{ matrix.config.container }}
       GHA_CONFIG_NAME: ${{ matrix.config.name }}
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
     steps:
     - name: if running in a container, update and install sudo, git, and other basics
