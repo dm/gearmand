@@ -41,7 +41,7 @@ jobs:
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
         # If you wish to specify custom queries, you can do so here or in a config file.
@@ -52,7 +52,7 @@ jobs:
         # queries: security-extended,security-and-quality
 
     - name: Install dependencies
-      run: sudo apt-get -o Acquire::Retries=3 -y install tzdata make apt-file software-properties-common libssl-dev build-essential autotools-dev autoconf automake pkgconf libboost-all-dev gperf libevent-dev uuid-dev sphinx-doc sphinx-common libhiredis-dev gcc g++
+      run: sudo apt-get -o Acquire::Retries=3 update && sudo apt-get -o Acquire::Retries=3 -y install tzdata make apt-file software-properties-common libssl-dev build-essential autotools-dev autoconf automake pkgconf libboost-all-dev gperf libevent-dev uuid-dev sphinx-doc sphinx-common libhiredis-dev gcc g++
 
     - name: Build gearmand
       run: |
@@ -64,6 +64,6 @@ jobs:
           make
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
