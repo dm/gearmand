@@ -10,14 +10,14 @@ LABEL version="${version}"
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=America/New_York \
     HOME=/root
-RUN (echo $TZ > /etc/timezone) \
- && dpkg-reconfigure tzdata
+RUN echo $TZ > /etc/timezone
 
 # Install packages
 RUN apt-get update \
  && apt-get -y upgrade \
  && apt-get -y install \
-	supervisor \
+  supervisor \
+  tzdata \
  && apt-get clean autoclean \
  && apt-get -y autoremove \
  && rm -rf /var/lib/apt/lists/*
