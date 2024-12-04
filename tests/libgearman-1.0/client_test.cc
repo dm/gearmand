@@ -810,7 +810,7 @@ static test_return_t hostname_resolution(void *)
 
   libgearman::Client client;
 
-  test_skip(GEARMAN_SUCCESS, gearman_client_add_servers(&client, "exist.gearman.info:12345"));
+  test_skip(GEARMAN_SUCCESS, gearman_client_add_servers(&client, "exist.gearman.org:12345"));
 
   ASSERT_EQ(GEARMAN_SUCCESS, gearman_client_error_code(&client));
 
