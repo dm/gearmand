@@ -964,13 +964,13 @@ static test_return_t Timer_TEST(void *)
 
 static test_return_t lookup_true_TEST(void *)
 {
-  test_warn(libtest::lookup("exist.gearman.info"), "dns is not currently working");
+  test_warn(libtest::lookup("exist.gearman.org"), "dns is not currently working");
   return TEST_SUCCESS;
 }
 
 static test_return_t lookup_false_TEST(void *)
 {
-  SKIP_IF_(libtest::lookup("does_not_exist.gearman.info"),
+  SKIP_IF_(libtest::lookup("does_not_exist.gearman.org"),
            "Broken DNS server detected");
 
   return TEST_SUCCESS;

@@ -11,7 +11,7 @@
 m4_include([./version.m4])
 AC_REVISION([m4_esyscmd_s([git describe --always])])
 AC_PREREQ([2.69])
-AC_INIT([gearmand],[VERSION_NUMBER],[https://github.com/gearman/gearmand/issues],[gearmand],[http://gearman.info/])
+AC_INIT([gearmand],[VERSION_NUMBER],[https://github.com/gearman/gearmand/issues],[gearmand],[https://gearman.org/gearmand/])
 
 AC_CONFIG_AUX_DIR([build-aux])
 
